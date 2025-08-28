@@ -1,0 +1,21 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Akshay saini",
+  "repository": "https://github.com/abhimvp/namaste-react.git",
+  "author": "abhimvp <abhishekreddyboddu1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}
