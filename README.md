@@ -2,6 +2,10 @@
 
 - Akshay Saini The BEST.
 
+## Talk is cheap - Show me the code
+
+- let's build a food ordering App. And to code let's get rid of previous code and start from scratch again - review commits of what we learned later.
+
 ## Laying the Foundation - babel, JSX
 
 ```text

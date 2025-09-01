@@ -1,4 +1,65 @@
-#heading {
-  color: blue;
-  text-align: center;
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.nav-items {
+  padding: 0px 20px;
+}
+
+.nav-items > ul {
+  display: flex;
+  font-size: 24px;
+}
+
+.nav-items > ul > li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.app-body {
+  margin: 5px 0px;
+  padding: 10px 10px 10px;
+  border: 2px solid red;
+}
+
+.search {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.restaurant-card {
+  background-color: brown;
+  color: wheat;
+  margin: 5px;
+  padding: 8px;
+  width: 250px;
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
+  background-color: wheat;
+  color: brown;
+  border: 1px solid black;
+}
+
+.restaurant-image {
+  width: 100%;
+}
+
+.restaurant-card > h4 {
+  margin: 5px 0;
 }
