@@ -2,6 +2,52 @@
 
 - Akshay Saini The BEST.
 
+## Let's Get Hooked
+
+- Let's clean our app a bit from previous lecture as it contains lot of code in `App.js`(Everything into single file - not good practice to keep large files in our app) & then proceed with `React Hooks`
+- **Types of Export/Import**
+  - Default:
+    - export default Component;
+    - import Component from "path";
+  - Named:
+    - export const NAME;
+    - import {NAME} from "path";
+    - When you want to export multiple things from a file use `Named` exports
+  - Note: Yes, it is possible to use both default and named exports within the same file in a React application, as this is a standard JavaScript module feature.
+    - Key points:
+      - Default Export: A module can only have one default export. It is often used to export the primary component or value from a file. When importing a default export, you can give it any name you choose and do not use curly braces.
+      - Named Exports: A module can have multiple named exports. These are used to export specific variables, functions, or components. When importing named exports, you must use curly braces and import them by their exact names (or use an alias).
+
+```js
+// MyComponents.js
+export const AnotherComponent = () => {
+  return <div>Another Component</div>;
+};
+
+const MyComponent = () => {
+  return <div>Hello World</div>;
+};
+
+export default MyComponent;
+
+// App.js
+import MyComponent, { AnotherComponent } from './MyComponents';
+
+function App() {
+  return (
+    <div>
+      <MyComponent />
+      <AnotherComponent />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+- React Hooks:
+
 ## Talk is cheap - Show me the code
 
 - let's build a food ordering App. And to code let's get rid of previous code and start from scratch again - review commits of what we learned later.
@@ -39,6 +85,7 @@ JSX - transpiled before it reaches to JS Engine on Browser - transpiling is done
   ![alt text](Images/image.png)
 
 - Extensions to Install via VS Code:
+
   - Prettier
   - Bracket Pair Colorization Toggler
   - Better Comments
