@@ -2,6 +2,15 @@
 
 - Akshay Saini The BEST.
 
+## Exploring the World
+
+Navigation is essential, and in this episode, we delve into React routing. You'll learn how to navigate seamlessly within your app, creating a smooth and user-friendly experience.
+
+- In here we will see how we can fetch dynamically data from API & populate our page dynamically.
+- Add this [Allow CORS extension](https://chromewebstore.google.com/detail/lhobafahddgcelffkeicbaginigeejlf?utm_source=item-share-cb) in chrome.
+- [Shimmer UI](https://medium.com/lattice-what-is/shimmer-ui-a-better-way-to-show-loading-states-aa1f4e563d17) instead of spinner or loading... update
+- Adding a search functionality.
+
 ## Let's Get Hooked
 
 - Let's clean our app a bit from previous lecture as it contains lot of code in `App.js`(Everything into single file - not good practice to keep large files in our app) & then proceed with `React Hooks`
