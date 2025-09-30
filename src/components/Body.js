@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   // destructuring the restaurant data
@@ -99,11 +100,16 @@ const Body = () => {
         {/* Writing re-usable components */}
         {filteredRestaurants.map((restaurant) => (
           // Each of this item should be represented Uniquely using a key prop - whenever we loop any list
-          <RestaurantCard
-            // Don't use array index as key
+          <Link
+            to={`/restaurant/${restaurant.info.id}`}
             key={restaurant.info.id}
-            resData={restaurant.info}
-          />
+          >
+            <RestaurantCard
+              // Don't use array index as key
+              // key={restaurant.info.id}
+              resData={restaurant.info}
+            />
+          </Link>
         ))}
       </div>
     </div>

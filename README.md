@@ -13,6 +13,7 @@ Routing can be mysterious, but we'll unravel the secrets in this episode. You'll
   - To render the router in the browser, use `<RouterProvider>`
 - Now we want to keep our header intact and change pages below it accordingly.- we use [outlet](https://reactrouter.com/api/components/Outlet#outlet)
 - use [Link which is a wrapper to `<a href>`](https://reactrouter.com/api/components/Link#link) to be able to navigate from the client-side.never ever use anchor tag. navigate to new page without reloading the page.
+- Dynamic routing & different pages for different restaurants. - useParams()
 
 ## Exploring the World
 
