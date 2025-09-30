@@ -1,8 +1,12 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+
+  useEffect(() => {
+    console.log("useEffect called");
+  }, [btnName]);
 
   // whenever state variable update, react triggers a reconciliation cycle (RE-RENDER) - component function is called again
   console.log("Header Rendered");

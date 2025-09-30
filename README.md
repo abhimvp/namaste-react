@@ -2,6 +2,16 @@
 
 - Akshay Saini The BEST.
 
+## Finding the Path
+
+Routing can be mysterious, but we'll unravel the secrets in this episode. You'll gain a deep understanding of routes, paths, and how to navigate to different sections of your app with precision.
+
+- [React Router](https://reactrouter.com/) - course V6.4 -> me v7 - `yarn add react-router-dom`
+- When building a `web application` with React, `react-router-dom` is the package to use as it provides all the necessary tools for routing in a browser environment. It implicitly includes react-router as a dependency, so you don't need to install both separately.
+- For [browser](https://reactrouter.com/start/data/custom)
+  - The browser runtime API that enables [route module](https://reactrouter.com/start/data/custom#client-rendering) APIs (loaders, actions, etc.) is `createBrowserRouter`.
+  - To render the router in the browser, use `<RouterProvider>`
+
 ## Exploring the World
 
 Navigation is essential, and in this episode, we delve into React routing. You'll learn how to navigate seamlessly within your app, creating a smooth and user-friendly experience.
