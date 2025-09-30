@@ -20,14 +20,14 @@ const Body = () => {
   const fetchData = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.38430&lng=78.45830&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3277491&lng=78.55259869999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
 
       // console.log(
       //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
       // );
-      // optional chaining
+      // optional chaining - Healthy to do - Read about it online
       setListOfRestaurants(
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -82,10 +82,10 @@ const Body = () => {
           onClick={() => {
             console.log("Button Clicked:Top Rated Restaurants");
             const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.5
+              (res) => res.info.avgRating > 4.1
             );
             console.log("Top Rated Restaurants:", filteredList);
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
           // onMouseOver={() => {
           //   console.log("Mouse Over:Top Rated Restaurants");

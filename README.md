@@ -10,6 +10,8 @@ Navigation is essential, and in this episode, we delve into React routing. You'l
 - Add this [Allow CORS extension](https://chromewebstore.google.com/detail/lhobafahddgcelffkeicbaginigeejlf?utm_source=item-share-cb) in chrome.
 - [Shimmer UI](https://medium.com/lattice-what-is/shimmer-ui-a-better-way-to-show-loading-states-aa1f4e563d17) instead of spinner or loading... update
 - Adding a search functionality.
+- add this chrome extension - [JSON Viewer](https://chromewebstore.google.com/detail/aimiinbnnkboelefkjlenlgimcabobli?utm_source=item-share-cb)
+- [Cors Proxy](https://corsproxy.io/) helps you to by-pass cors error. [Refer docs](https://corsproxy.io/docs/getting-started)
 
 ## Let's Get Hooked
 
