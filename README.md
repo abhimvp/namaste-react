@@ -2,6 +2,19 @@
 
 - Akshay Saini The BEST.
 
+## Jo Dikhta Hai, Vo Bikta Hai
+
+Visual appeal is crucial, and in this episode, you'll delve into styling your app. You'll learn about different styling approaches, making your app not just functional but visually appealing.
+
+- SCSS, [SaSS](https://sass-lang.com/) - not recommended for prod apps - companies won't use these.
+- in uber they [styled-components](https://styled-components.com/)
+- Other libraries or frameworks - [materialUI](https://mui.com/material-ui/), [ChakraUI](https://chakra-ui.com/), bootstrap, [ant design](https://ant.design/)
+- [Tailwind CSS](https://tailwindcss.com/) - we use this in our APP - we install it using framework guides - [parcel](https://tailwindcss.com/docs/installation/framework-guides/parcel)
+  - `yarn add -D tailwindcss@3 postcss` - [postcss](https://postcss.org/) is a tool for transforming css with js.
+- tailwind.config.js - using [v3](https://v3.tailwindcss.com/docs/guides/parcel) - do `npx tailwindcss init` - Created Tailwind CSS config file: tailwind.config.js - after configuring our app using the guide - now we're to use tailwind.
+- usage of `className`
+- Coding Tailwind CSS
+
 ## Optimizing our App
 
 - Performance matters, and in this episode, you'll explore optimization techniques. Discover how to make your app faster, more efficient, and provide a smoother user experience.

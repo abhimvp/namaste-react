@@ -1,7 +1,7 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": "Akshay saini",
+  "description": "Akshay saini namaste react course",
   "repository": "https://github.com/abhimvp/namaste-react.git",
   "author": "abhimvp <abhishekreddyboddu1@gmail.com>",
   "license": "MIT",
@@ -11,7 +11,9 @@
     "test": "jest"
   },
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "parcel": "^2.15.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3"
   },
   "dependencies": {
     "react": "^19.1.1",
