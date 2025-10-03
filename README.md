@@ -2,6 +2,35 @@
 
 - Akshay Saini The BEST.
 
+## Let's Get Classy
+
+In this episode, we introduce class components, expanding your React toolkit. You'll discover a different approach to creating components and how class components complement your React development skills.
+
+- In `About.js` we will explore old way of creating components - class based one's.
+- Topics covered:
+  - class based components
+  - Super(props)
+  - this.state and this.setState
+  - Life cycle of class based components
+    - constructor
+    - render
+    - componentDidMount
+      - use of this? -> it's important to know when creating components inside components -> once the component is mounted successfully - they then make API call -> why we do that because -> in functional - we make API call inside useEffect() -> bcoz we load our component - then basic details shows up(or shimmer UI - show something to user first) - then make api calls - then render the data - similarly we do the same in class based components -> constructor is called - then render basic data -> then make API call using componentDidMount() -> then render the data.
+- lifecycle methods:
+  Parent - constructor
+  About.js:14 Parent - render
+  UserClass.js:7 constructor Abhishek(class)
+  UserClass.js:21 render Abhishek(class)
+  UserClass.js:7 constructor Elon Musk(class)
+  UserClass.js:21 render Elon Musk(class)
+  UserClass.js:16 componentDidMount Abhishek(class)
+  UserClass.js:16 componentDidMount Elon Musk(class)
+  About.js:11 Parent - componentDidMount
+- Diagram for [reference](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  - React has two phases: Render and commit
+    - Render - Constructor then render() once the DOM is loaded then componentDidMount(commit phase) is called.
+    - once render phase is done for both parent and child components then commit phase happens. if commit phase starts then DOM manipulation happens - which is a long process for react.
+
 ## Finding the Path
 
 Routing can be mysterious, but we'll unravel the secrets in this episode. You'll gain a deep understanding of routes, paths, and how to navigate to different sections of your app with precision.
