@@ -2,6 +2,37 @@
 
 - Akshay Saini The BEST.
 
+## Optimizing our App
+
+- Performance matters, and in this episode, you'll explore optimization techniques. Discover how to make your app faster, more efficient, and provide a smoother user experience.
+- SRP (Single Responsibility principle)
+- Custom Hooks
+  - The React docs recommend you to use `use` for building a custom hook - it's a good practice. Reader of the code knows it's a custom hook. and the linter's will throw a lot.keep this in mind.
+  - // I want to abstract the data fetching logic - custom hook - useRestaurantMenu
+  - How you write the code matters - should be clean and modular - `Now the RestaurantMenu.js looks clean`.
+  - when writing code - we can give the responsibility of fetching data to a hook. As it also makes it testable and independent and anytime any url changes or something during fetch we can directly go into that hook and test it without bothering whole other component.
+  - Now we have fetching data logic into a hook and displaying logic in the main component.
+  - Another example: custom hooks
+    - Online Offline Feature - Website should know whether the user is online or offline.(we see this in our online chats when our friend is online or offline -away)
+      - Suppose if the internet of user us off - we can show something
+        - we use [online event listener](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event).
+      - Now we can re-use this hook every where as needed. (in header.js)
+- Usage of dev console
+  - we can simulate turning off internet from browser- dev console.
+    - Go to network tab - beside disabled cache checkbox - we have No throttling -> In it ->Presets - offline
+- MakeMyTrip Website
+  - Indian site and see the bundling of all their files in the Network tab of that website.
+- lazy Loading
+  - On demand loading - grocery as separate feature to load when we go to that page only.
+  - // import Grocery from "./components/Grocery"; - we don't import it here directly
+  - // we will import it using lazy loading - dynamic import
+  - // upon on-demand loading - when the user clicks on the grocery link - it will be loaded
+  - // this will help in reducing the main bundle size - helps in faster loading of the application
+  - In dist folder we have new grocery code bundle.js file.
+- Suspense Keyword
+  - it is a component from react - we use it to wrap our Grocery component.
+  - Lets you display a fallback until its children have finished loading.
+
 ## Let's Get Classy
 
 In this episode, we introduce class components, expanding your React toolkit. You'll discover a different approach to creating components and how class components complement your React development skills.

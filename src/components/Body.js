@@ -3,16 +3,14 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  // destructuring the restaurant data
-  // passing dynamic props
-  // the ? means optional chaining
-  // const { restaurants } = props.resData?.data;
+  const onlineStatus = useOnlineStatus();
+
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchRestaurant, setSearchRestaurant] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  // console.log("Body Rendered");
 
   useEffect(() => {
     fetchData();
@@ -25,10 +23,6 @@ const Body = () => {
       );
       const json = await data.json();
 
-      // console.log(
-      //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-      // );
-      // optional chaining - Healthy to do - Read about it online
       setListOfRestaurants(
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -37,25 +31,21 @@ const Body = () => {
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
-      // this is how we solve the bug
     } catch (error) {
       console.error("Failed to fetch data:", error);
-      // Fallback to mock data if API fails
       setListOfRestaurants(resList.data.restaurants);
     }
   };
 
-  // show loading screen if the listofRestaurants is empty - conditional rendering
-  // if (listOfRestaurants.length === 0) {
-  //   return <Shimmer />;
-  // }
+  if (!onlineStatus) {
+    return <h1>🔴 You are offline. Please check your internet connection!!</h1>;
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="app-body">
       <div className="filter">
-        {/* search functionality - Filter the restaurant cards and update the UI*/}
         <div className="search">
           <input
             type="text"
@@ -77,7 +67,6 @@ const Body = () => {
             Search
           </button>
         </div>
-        {/* By clicking on this button, we can filter the restaurant list */}
         <button
           className="filter-btn"
           onClick={() => {
@@ -88,27 +77,17 @@ const Body = () => {
             console.log("Top Rated Restaurants:", filteredList);
             setFilteredRestaurants(filteredList);
           }}
-          // onMouseOver={() => {
-          //   console.log("Mouse Over:Top Rated Restaurants");
-          // }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {/* we loop through the restaurant data and create a RestaurantCard for each one */}
-        {/* Writing re-usable components */}
         {filteredRestaurants.map((restaurant) => (
-          // Each of this item should be represented Uniquely using a key prop - whenever we loop any list
           <Link
             to={`/restaurant/${restaurant.info.id}`}
             key={restaurant.info.id}
           >
-            <RestaurantCard
-              // Don't use array index as key
-              // key={restaurant.info.id}
-              resData={restaurant.info}
-            />
+            <RestaurantCard resData={restaurant.info} />
           </Link>
         ))}
       </div>

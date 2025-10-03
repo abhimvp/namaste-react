@@ -1,15 +1,16 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     console.log("useEffect called");
   }, [btnName]);
 
-  // whenever state variable update, react triggers a reconciliation cycle (RE-RENDER) - component function is called again
   console.log("Header Rendered");
   return (
     <div className="app-header">
@@ -18,9 +19,19 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li>Online Status: {onlineStatus ? "✅" : "❌"}</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
           <li>Cart</li>
           <button
             className="login-btn"
