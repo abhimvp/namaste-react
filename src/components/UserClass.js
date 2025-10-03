@@ -3,39 +3,43 @@ import React from "react";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("Child - constructor");
-    console.log("constructor", this.props.name);
-    // this is how we create state in class component
     this.state = {
-      count: 0,
-      count2: 1,
+      userInfo: {
+        name: "Dummy name",
+        location: "Dummy location",
+        avatar_url: "https://via.placeholder.com/150",
+      },
     };
+    console.log("mounting phase - constructor");
   }
 
-  componentDidMount(){
-    console.log("componentDidMount", this.props.name);
-    // Make API call here
+  async componentDidMount() {
+    // Simulating an API call
+    const data = await fetch("https://api.github.com/users/abhimvp");
+    const json = await data.json();
+    // console.log(json);
+    console.log("updating - componentDidMount");
+    this.setState({
+      userInfo: json,
+    });
+  }
+  componentDidUpdate() {
+    console.log("updating - componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("unmounting - componentWillUnmount");
   }
   render() {
-    // has render method -> Returns a piece of JSX
-    console.log("render", this.props.name);
-
-    const { name, location } = this.props;
-    const { count } = this.state;
+    // console.log("render", this.props.name);
+    console.log("mounting phase - render");
+    const { name, location, avatar_url } = this.state.userInfo;
+    // debugger; //- lovely tool to debug
+    // const { name, location } = this.props;
     return (
       <div className="user-card">
+        <img src={avatar_url} width={200} alt="User Avatar" height={200} />
         <h1>User Profile</h1>
-        <h2>Count: {count}</h2>
-        <button
-          onClick={() => {
-            this.setState({
-              // setState is used to update the state - React will re-render the component - class component
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Increase Count
-        </button>
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h4>Email: abhishek@example.com</h4>

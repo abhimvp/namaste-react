@@ -30,6 +30,8 @@ In this episode, we introduce class components, expanding your React toolkit. Yo
   - React has two phases: Render and commit
     - Render - Constructor then render() once the DOM is loaded then componentDidMount(commit phase) is called.
     - once render phase is done for both parent and child components then commit phase happens. if commit phase starts then DOM manipulation happens - which is a long process for react.
+- how to make API call in class based components.
+  - we will call [github user Api](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user) will call [usingTHis](https://api.github.com/users/USERNAME)
 
 ## Finding the Path
 
