@@ -12,7 +12,8 @@ Visual appeal is crucial, and in this episode, you'll delve into styling your ap
 - [Tailwind CSS](https://tailwindcss.com/) - we use this in our APP - we install it using framework guides - [parcel](https://tailwindcss.com/docs/installation/framework-guides/parcel)
   - `yarn add -D tailwindcss@3 postcss` - [postcss](https://postcss.org/) is a tool for transforming css with js.
 - tailwind.config.js - using [v3](https://v3.tailwindcss.com/docs/guides/parcel) - do `npx tailwindcss init` - Created Tailwind CSS config file: tailwind.config.js - after configuring our app using the guide - now we're to use tailwind.
-- usage of `className`
+- `yarn add -D autoprefixer` - we recommend that you use Autoprefixer, which is a PostCSS plugin that automatically adds any necessary vendor prefixes based on the browsers you tell it you need to support
+- usage of `className` - we're going to put css using className - tailwind gives us that.
 - Coding Tailwind CSS
 
 ## Optimizing our App

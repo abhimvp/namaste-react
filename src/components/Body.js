@@ -45,15 +45,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="app-body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black bg-yellow-200 p-1 rounded-lg"
             value={searchRestaurant}
             onChange={(e) => setSearchRestaurant(e.target.value)}
           />
           <button
+            className="px-4 py-1 bg-green-300 m-4 rounded-lg"
             onClick={() => {
               console.log("Search for:", searchRestaurant);
               const filteredList = listOfRestaurants.filter((res) =>
@@ -67,21 +68,23 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            console.log("Button Clicked:Top Rated Restaurants");
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.1
-            );
-            console.log("Top Rated Restaurants:", filteredList);
-            setFilteredRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="filter m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-1 bg-green-300 m-4 rounded-lg"
+            onClick={() => {
+              console.log("Button Clicked:Top Rated Restaurants");
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.1
+              );
+              console.log("Top Rated Restaurants:", filteredList);
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <Link
             to={`/restaurant/${restaurant.info.id}`}
