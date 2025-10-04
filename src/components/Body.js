@@ -4,6 +4,7 @@ import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withPromotedLabel } from "./RestaurantCard";
 
 const Body = () => {
   const onlineStatus = useOnlineStatus();
@@ -11,6 +12,10 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchRestaurant, setSearchRestaurant] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  // console.log("listOfRestaurants:", listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -90,7 +95,12 @@ const Body = () => {
             to={`/restaurant/${restaurant.info.id}`}
             key={restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant.info} />
+            {/* if the restaurant is promoted then add a promoted label to it */}
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant.info} />
+            ) : (
+              <RestaurantCard resData={restaurant.info} />
+            )}
           </Link>
         ))}
       </div>

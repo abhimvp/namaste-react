@@ -2,6 +2,18 @@
 
 - Akshay Saini The BEST.
 
+## Data is the New Oil
+
+Data management is essential in React development. In this episode, we explore how to handle and manipulate data using state, props, and other powerful React techniques.
+
+- Higher order components
+- Pure Functions
+- Controlled and uncontrolled components
+- filter() function and Building Accordion
+- React Dev Tools
+- Props Drilling
+- React context
+
 ## Jo Dikhta Hai, Vo Bikta Hai
 
 Visual appeal is crucial, and in this episode, you'll delve into styling your app. You'll learn about different styling approaches, making your app not just functional but visually appealing.

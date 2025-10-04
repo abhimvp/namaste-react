@@ -20,4 +20,24 @@ const RestaurantCard = (props) => {
   );
 };
 
+// Higher Order component
+// input - RestaurantCard
+// output - RestaurantCard with promoted label
+// these are pure functions - they do not change any behavior of the original component
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    // Returning a new component
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+        {/* ... is a spread operator - it will pass all props to the RestaurantCard component */}
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;
