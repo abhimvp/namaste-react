@@ -9,7 +9,7 @@ Data management is essential in React development. In this episode, we explore h
 - Higher order components
 - Pure Functions
 - Controlled and uncontrolled components
-- filter() function and Building Accordion
+- filter() function and Building Accordion - great learning this commit needs to be revisited.
 - React Dev Tools
 - Props Drilling
 - React context

@@ -18,7 +18,7 @@ const Header = () => {
         <img className="w-40" src={LOGO_URL} />
       </div>
       <div className="flex items-center">
-        <ul className="flex p-4 m-4 text-white">
+        <ul className="flex p-4 m-4 text-black">
           <li className="px-4">Online Status: {onlineStatus ? "✅" : "❌"}</li>
           <li className="px-4">
             <Link to="/">Home</Link>

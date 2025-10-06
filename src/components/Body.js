@@ -27,6 +27,7 @@ const Body = () => {
         "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3277491&lng=78.55259869999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
+      // console.log(json);
 
       setListOfRestaurants(
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -45,6 +46,7 @@ const Body = () => {
   if (!onlineStatus) {
     return <h1>🔴 You are offline. Please check your internet connection!!</h1>;
   }
+  // console.log(listOfRestaurants);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
